@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UltraTipCalculator</string>
+    <string name="app_name">Ultra Tip Calculator</string>
     <string name="action_legal">Legal</string>
     <string name="section_format">Hello World from section: %1$d</string>
 </resources>
