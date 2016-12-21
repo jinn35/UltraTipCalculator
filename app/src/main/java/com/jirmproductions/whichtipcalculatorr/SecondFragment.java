@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
-
 public class SecondFragment extends Fragment {
+
 
     public SecondFragment() {
     }
@@ -33,4 +33,5 @@ public class SecondFragment extends Fragment {
                         "Taxi Driver\t\t", "         15%"}));
         return rootView;
     }
+
 }

@@ -12,10 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.NumberFormat;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import com.amazon.device.ads.*;
 
 public class MainFragment extends Fragment {
 
@@ -25,6 +30,8 @@ public class MainFragment extends Fragment {
     EditText percentToTip;
     EditText numberInParty;
     Button calcButton;
+    AdLayout adView;
+    View rootView;
 
     public MainFragment() {
     }
@@ -32,7 +39,14 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
+        updateDisplay();
+
+      //  adView = (AdLayout) rootView.findViewById(R.id.adView);
+      //  AdTargetingOptions adOptions = new AdTargetingOptions();
+      //  // Optional: Set ad targeting options here.
+      //  adView.loadAd(adOptions); // Retrieves an ad on background thread
 
         tipPerPerson = (TextView) rootView.findViewById(R.id.textViewTipPerPerson);
         billPerPerson = (TextView) rootView.findViewById(R.id.textViewBillPerPerson);
@@ -79,4 +93,27 @@ public class MainFragment extends Fragment {
 
         return rootView;
     }
+
+    @Override
+    public void onDestroy()
+    {
+        super.onDestroy();
+        adView.destroy();
+    }
+
+    private void updateDisplay() {
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                adView = (AdLayout) rootView.findViewById(R.id.adView);
+                AdTargetingOptions adOptions = new AdTargetingOptions();
+                // Optional: Set ad targeting options here.
+                adView.loadAd(adOptions); // Retrieves an ad on background thread
+            }
+
+        },0,15000);//Update text every 5 seconds
+    }
+
 }

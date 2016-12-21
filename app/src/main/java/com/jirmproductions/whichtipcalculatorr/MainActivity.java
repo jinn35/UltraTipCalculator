@@ -11,9 +11,13 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.amazon.device.ads.*;
+
 public class MainActivity extends AppCompatActivity {
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -34,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AdRegistration.setAppKey("e22b1bf995294465ac16d51e1bf0208f");
+        AdRegistration.registerApp(getApplicationContext());
+
+        //AdRegistration.enableTesting(true);
+        //AdRegistration.enableLogging(true);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
