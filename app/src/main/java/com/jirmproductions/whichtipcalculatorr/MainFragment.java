@@ -44,9 +44,9 @@ public class MainFragment extends Fragment {
         updateDisplay();
 
       //  adView = (AdLayout) rootView.findViewById(R.id.adView);
-      //  AdTargetingOptions adOptions = new AdTargetingOptions();
-      //  // Optional: Set ad targeting options here.
-      //  adView.loadAd(adOptions); // Retrieves an ad on background thread
+        //      //  AdTargetingOptions adOptions = new AdTargetingOptions();
+        //      //  // Optional: Set ad targeting options here.
+        //      //  adView.loadAd(adOptions); // Retrieves an ad on background thread
 
         tipPerPerson = (TextView) rootView.findViewById(R.id.textViewTipPerPerson);
         billPerPerson = (TextView) rootView.findViewById(R.id.textViewBillPerPerson);
