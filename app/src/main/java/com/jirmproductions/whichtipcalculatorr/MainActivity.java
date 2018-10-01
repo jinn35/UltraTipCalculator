@@ -105,15 +105,18 @@ public class MainActivity extends AppCompatActivity {
             if (position==0)
             {
                 return new MainFragment();
-            }else{
+            }else if(position == 1){
                 return new SecondFragment();
+            }
+            else {
+                return new ThirdFragment();
             }
         }
 
         @Override
         public int getCount() {
             // Show 2 total pages.
-            return 2;
+            return 3;
         }
 
         @Override
@@ -121,8 +124,12 @@ public class MainActivity extends AppCompatActivity {
             switch (position) {
                 case 0:
                     return "Tip Calculator";
+
                 case 1:
                     return "Tip Etiquette";
+
+                case 2:
+                    return "Tip Suggestion";
             }
             return null;
         }
