@@ -123,13 +123,13 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Tip Calculator";
+                    return "Calculator";
 
                 case 1:
-                    return "Tip Etiquette";
+                    return "Etiquette";
 
                 case 2:
-                    return "Tip Suggestion";
+                    return "Suggestion";
             }
             return null;
         }
